@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacionalidade</title>
+</head>
+<body>
+    <h1>Nacionalidades</h1>
+    Pais em que eu moro: <input type="text" name="txtna" id="txtna">
+    <input type="button" value="verificar">
+    <div id="res">
+
+    </div>
+    <script>
+        document.addEventListener('keyup', saber)
+        function saber() {
+            var pa = document.querySelector('input#txtna')
+            var res = document.querySelector('div#res')
+            var pais = String(pa.value)
+            res.innerHTML = `<p>Vivendo em <strong>${pais}</strong>.</p>`
+            if (pais.toUpperCase() == 'BRASIL') {
+                res.innerHTML += '<p>Você é <strong>brasileiro</strong>.</p>'
+            } else {
+                res.innerHTML += 'Você é <strong>estrangeiro</strong>.'
+            }
+        }
+    </script>
+</body>
+</html>
